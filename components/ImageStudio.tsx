@@ -152,7 +152,7 @@ export const ImageStudio: React.FC = () => {
       <h1 className="text-4xl font-bold text-white">SiriusAI(TM) Image Studio</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Image Generation */}
-        <Card title="Generate Image (Gemini)" icon={<ImageIcon />}>
+        <Card title="Generate Image (SiriusAI™ SBGRE)" icon={<ImageIcon />}>
           <div className="p-4 space-y-4">
             <div className="relative">
                 <textarea
@@ -184,7 +184,7 @@ export const ImageStudio: React.FC = () => {
         </Card>
 
         {/* Image Editing */}
-        <Card title="Edit Image (Gemini)" icon={<ImageIcon />}>
+        <Card title="Edit Image (SiriusAI™ SBGRE)" icon={<ImageIcon />}>
           <div className="p-4 space-y-4">
             <input type="file" accept="image/*" onChange={handleFileChange} ref={fileInputRef} className="hidden" />
             <Button onClick={() => fileInputRef.current?.click()} className="w-full bg-gray-600 hover:bg-gray-500">

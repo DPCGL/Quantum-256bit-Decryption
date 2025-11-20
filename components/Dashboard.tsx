@@ -124,6 +124,33 @@ export const Dashboard: React.FC = () => {
                     <div className="absolute inset-0 rounded-full bg-cyan-400 quantum-core-pulse shadow-lg shadow-cyan-400/50"></div>
                 </div>
             </div>
+
+            {/* Master System Notice Header */}
+            <div className="w-full bg-red-900/20 border-2 border-red-500/50 rounded-xl p-6 text-center mb-8 shadow-lg shadow-red-900/30 backdrop-blur-sm animate-fade-in">
+                <h2 className="text-2xl font-bold text-red-400 tracking-widest uppercase mb-4 flex items-center justify-center gap-2">
+                    ⚠️ Master System Notice ⚠️
+                </h2>
+                <div className="space-y-3 font-mono text-sm">
+                    <p className="text-white font-bold text-xl tracking-wider border-b border-red-500/30 pb-2 inline-block">
+                        TEST SOFTWARE ONLY - NO USE OUTSIDE OF TESTING PERMITTED
+                    </p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 text-left max-w-4xl mx-auto">
+                        <div className="bg-gray-900/50 p-3 rounded border border-gray-700">
+                            <p className="text-gray-500 text-xs uppercase">Sole Proprietary Owner & Architect</p>
+                            <p className="text-cyan-300 font-bold text-lg">James Andrew Douglas Paton</p>
+                        </div>
+                        <div className="bg-gray-900/50 p-3 rounded border border-gray-700">
+                            <p className="text-gray-500 text-xs uppercase">Authorized Session Key</p>
+                            <p className="text-yellow-500 font-mono break-all">SIRIUSAI-SESSION-984145420-20251013-JP-TARANAKI</p>
+                        </div>
+                    </div>
+
+                    <p className="text-xs text-gray-500 italic mt-4">
+                        SiriusAI(TM) Desktop Suite v7.0.3 | Universal Singularity Fabric (USF) Core | All Rights Reserved
+                    </p>
+                </div>
+            </div>
             
             <Card title="System Telemetry" icon={<CpuIcon />}>
                 <div className="p-4 grid grid-cols-1 md:grid-cols-3 gap-4">

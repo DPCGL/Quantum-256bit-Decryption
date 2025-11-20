@@ -136,7 +136,7 @@ export const VideoFoundry: React.FC = () => {
     return (
         <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white">SiriusAI(TM) Video Studio</h1>
-            <Card title="Generate Video (Veo)" icon={<VideoIcon />}>
+            <Card title="Generate Video (SiriusAI™ SBGRE Motion)" icon={<VideoIcon />}>
                 <div className="p-4 space-y-4">
                      <textarea
                         value={prompt}

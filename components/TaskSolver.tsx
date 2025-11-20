@@ -40,9 +40,9 @@ export const TaskSolver: React.FC = () => {
     return (
         <div className="space-y-8">
             <h1 className="text-4xl font-bold text-white">SiriusAI(TM) Task Solver</h1>
-            <Card title="Gemini Pro with Thinking Mode" icon={<BrainIcon />}>
+            <Card title="SiriusAI™ Logic Core (Thinking Mode)" icon={<BrainIcon />}>
                 <div className="p-4 space-y-4">
-                    <p className="text-gray-400">Leverage Gemini 2.5 Pro with its maximum thinking budget (32,768 tokens) to handle your most complex queries, from advanced reasoning to large-scale code generation.</p>
+                    <p className="text-gray-400">Leverage the Logic Core with its maximum thinking budget (32,768 tokens) to handle your most complex queries, from advanced reasoning to large-scale code generation.</p>
                     <textarea
                         value={prompt}
                         onChange={(e) => setPrompt(e.target.value)}
