@@ -1,0 +1,8 @@
+{
+  "name": "Copy of Copy of Copy of SiriusAI(TM)Desktop Suite",
+  "description": "A web-based control panel and creative suite for SiriusAI(TM)OSv4 It features a telemetry dashboard and integrates a wide range of Gemini API capabilities including image/video generation, real-time chat, live voice assistance, and grounded web search.",
+  "requestFramePermissions": [
+    "microphone",
+    "geolocation"
+  ]
+}
