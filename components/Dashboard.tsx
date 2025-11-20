@@ -4,7 +4,7 @@ import type { HardwareInfo, VramInfo } from '../types';
 import { Card } from './shared/Card';
 import { LogViewer } from './shared/LogViewer';
 import { Button } from './shared/Button';
-import { CpuIcon, GpuIcon, RamIcon, SettingsIcon, SiriusIcon } from './shared/Icons';
+import { CpuIcon, GpuIcon, RamIcon, SettingsIcon, SiriusIcon, LockIcon } from './shared/Icons';
 
 // Helper for random number generation
 const random = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
@@ -50,6 +50,25 @@ export const Dashboard: React.FC = () => {
     const [logs, setLogs] = useState<string[]>(['[SYS] SiriusAI Quantum Engine v7.0 Initialized.']);
 
     useEffect(() => {
+        // --- Simulated Metrics Interval ---
+        const vramInterval = setInterval(() => {
+            setVram({
+                use_mb: random(4000, 12000),
+                source: 'Gemini Model Pool',
+            });
+        }, 3000);
+
+        const logInterval = setInterval(() => {
+            const logMessages = [
+                '[API] Quantum Tunnel stable.',
+                '[AGENT] Task collapsed successfully.',
+                `[GPU] Manifold rendering on ${hardware.gpu.name}.`,
+                '[SYS] Kernel responsive.',
+                '[NET] Secure connection established with Google Cloud.',
+            ];
+            setLogs(prev => [...prev.slice(-10), logMessages[random(0, logMessages.length - 1)]]);
+        }, 5000);
+
         // --- Hardware Detection ---
         // 1. Detect CPU Cores
         const coreCount = navigator.hardwareConcurrency || 4; // Fallback to 4
@@ -81,30 +100,11 @@ export const Dashboard: React.FC = () => {
         
         setLogs(prev => [...prev, '[HW] System hardware scan complete.']);
 
-        // --- Simulated Metrics Interval ---
-        const vramInterval = setInterval(() => {
-            setVram({
-                use_mb: random(4000, 12000),
-                source: 'Gemini Model Pool',
-            });
-        }, 3000);
-
-        const logInterval = setInterval(() => {
-            const logMessages = [
-                '[API] Quantum Tunnel stable.',
-                '[AGENT] Task collapsed successfully.',
-                `[GPU] Manifold rendering on ${gpuName}.`,
-                '[SYS] Kernel responsive.',
-                '[NET] Secure connection established with Google Cloud.',
-            ];
-            setLogs(prev => [...prev.slice(-10), logMessages[random(0, logMessages.length - 1)]]);
-        }, 5000);
-
         return () => {
             clearInterval(vramInterval);
             clearInterval(logInterval);
         };
-    }, []);
+    }, []); // Dependency array empty to run once on mount
 
     return (
         <div className="space-y-8">
@@ -123,6 +123,26 @@ export const Dashboard: React.FC = () => {
                 <div className="relative w-16 h-16">
                     <div className="absolute inset-0 rounded-full bg-cyan-400 quantum-core-pulse shadow-lg shadow-cyan-400/50"></div>
                 </div>
+            </div>
+
+            {/* Decryption Lock Down Green Light Notice */}
+            <div className="w-full bg-green-900/20 border-2 border-green-500/50 rounded-xl p-4 text-center mb-4 shadow-lg shadow-green-900/30 backdrop-blur-sm animate-fade-in flex flex-col items-center justify-center">
+                <div className="flex items-center space-x-4 mb-2">
+                    <div className="relative">
+                        <div className="w-4 h-4 bg-green-500 rounded-full shadow-[0_0_20px_#22c55e]"></div>
+                        <div className="absolute inset-0 w-4 h-4 bg-green-400 rounded-full animate-ping opacity-75"></div>
+                    </div>
+                    <h2 className="text-lg font-bold text-green-400 tracking-widest uppercase flex items-center gap-2">
+                        Decryption Service Is Locked Down <LockIcon className="w-5 h-5" />
+                    </h2>
+                    <div className="relative">
+                        <div className="w-4 h-4 bg-green-500 rounded-full shadow-[0_0_20px_#22c55e]"></div>
+                        <div className="absolute inset-0 w-4 h-4 bg-green-400 rounded-full animate-ping opacity-75"></div>
+                    </div>
+                </div>
+                <p className="text-green-100/90 text-xs font-mono uppercase tracking-wider border-t border-green-500/30 pt-2 mt-1">
+                    Proprietary Software Creator Owner and Owner: James Andrew Douglas Paton
+                </p>
             </div>
 
             {/* Master System Notice Header */}

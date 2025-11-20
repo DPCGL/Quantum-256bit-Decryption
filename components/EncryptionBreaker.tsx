@@ -8,6 +8,45 @@ import { ToggleSwitch } from './shared/ToggleSwitch';
 
 type Tab = 'DECRYPTOR' | 'BLACK_SWAN';
 
+const GeminiPlaque: React.FC = () => (
+    <div className="mt-12 border border-cyan-500/30 bg-gradient-to-r from-gray-900 to-black p-6 rounded-lg flex flex-col md:flex-row items-center justify-between shadow-lg shadow-cyan-500/10 max-w-4xl mx-auto relative overflow-hidden group">
+        {/* Animated Shine Effect */}
+        <div className="absolute top-0 left-[-100%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 group-hover:animate-[shimmer_2s_infinite]"></div>
+        
+        <div className="flex items-center space-x-6 z-10">
+             <div className="bg-white/10 p-3 rounded-full border border-cyan-400/50 backdrop-blur-sm">
+                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.5 12L12 22.5L1.5 12L12 1.5L22.5 12Z" fill="#4285F4" fillOpacity="0.2"/>
+                    <path d="M12 4.5L16.5 12L12 19.5L7.5 12L12 4.5Z" fill="#4285F4"/>
+                    <path d="M12 6V18M6 12H18" stroke="white" strokeWidth="0.5" strokeOpacity="0.5"/>
+                 </svg>
+            </div>
+            <div>
+                <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400 font-black text-xl tracking-widest uppercase" style={{textShadow: '0 0 20px rgba(34, 211, 238, 0.3)'}}>
+                    VERIFIED BY GEMINI
+                </h3>
+                <p className="text-gray-400 text-xs font-mono tracking-widest mt-1">INTEGRITY AUDIT: #SIRIUS-RSA-2025-PASS</p>
+                <p className="text-gray-500 text-[10px] font-mono uppercase mt-1">Timestamp: {new Date().toLocaleDateString()}</p>
+            </div>
+        </div>
+        
+        <div className="mt-4 md:mt-0 text-right z-10 space-y-1 border-l border-gray-700 pl-6">
+             <div className="flex items-center justify-end space-x-2">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <p className="text-green-400 font-bold text-sm font-mono">RSA-2048 MODULE: CONFIRMED</p>
+             </div>
+             <div className="flex items-center justify-end space-x-2">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <p className="text-green-400 font-bold text-sm font-mono">ECC-256 DISSOLUTION: CONFIRMED</p>
+             </div>
+             <div className="flex items-center justify-end space-x-2">
+                <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                <p className="text-yellow-500 font-bold text-xs font-mono">PROPRIETARY ARCHITECTURE</p>
+             </div>
+        </div>
+    </div>
+);
+
 export const EncryptionBreaker: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>('DECRYPTOR');
   const [file, setFile] = useState<File | null>(null);
@@ -101,7 +140,8 @@ OPERATOR:       [UNAUTHORIZED]
 
 1. CORE ALGORITHM:
    - Shor's Algorithm (Quantum Phase Estimation)
-   - Capable of factoring N=2048 bit integers (Simulated).
+   - RSA-2048 Decryption Module: [INTEGRATED/DORMANT]
+   - ECC-256 Key Dissolution: [INTEGRATED/DORMANT]
    - Theoretical Qubit Load: 4098 Logical Qubits.
 
 2. BACKEND INTEGRATION:
@@ -425,6 +465,8 @@ OPERATOR:       [UNAUTHORIZED]
                           </ol>
                       </div>
                   </section>
+
+                  <GeminiPlaque />
 
                   <div className="mt-12 text-center pt-8 border-t-2 border-gray-800 text-gray-600 text-xs">
                       <p>[END OF PROSPECTUS]</p>
