@@ -1,2 +1,0 @@
-# SiriusAI™ Quantum Benchmark
-**Session Key**: SIRIUSAI-SESSION-984145420-20251013-JP-TARANAKI
